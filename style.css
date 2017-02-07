@@ -17,3 +17,7 @@ td {
 #turnText {
   text-align: center;
 }
+
+#winnerStatement {
+  color: green;
+}

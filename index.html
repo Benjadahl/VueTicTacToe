@@ -8,13 +8,19 @@
   <div id="vueApp">
     <div id="game">
       <div id="turnText">
-        <h3>Turn:</h3>
-        <h2 v-if="isX">X</h2>
-        <h2 v-if="!isX">O</h2>
+        <div v-if="!finished">
+          <h3>Turn:</h3>
+          <h2 v-if="isX">X</h2>
+          <h2 v-if="!isX">O</h2>
+        </div>
+        <div v-if="finished" id="winnerStatement">
+          <h3>Winner:</h3>
+          <h2> {{ winner }} </h2>
+        </div>
       </div>
       <table >
         <tr v-for="(row, rowKey) in board">
-          <td v-for="(item, key) in row" v-on:click="changeBrick(rowKey, key)">{{ item }}</td>
+          <td v-for="(item, key) in row" v-on:click="function(){changeBrick(rowKey, key); checkWin(rowKey, key)}">{{ item }}</td>
         </tr>
       </table>
       <br />
