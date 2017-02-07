@@ -1,0 +1,26 @@
+<head>
+  <title>VueTicTacToe</title>
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+  <div id="vueApp">
+    <div id="game">
+      <div id="turnText">
+        <h3>Turn:</h3>
+        <h2 v-if="isX">X</h2>
+        <h2 v-if="!isX">O</h2>
+      </div>
+      <table >
+        <tr v-for="(row, rowKey) in board">
+          <td v-for="(item, key) in row" v-on:click="changeBrick(rowKey, key)">{{ item }}</td>
+        </tr>
+      </table>
+      <br />
+      <button v-on:click="resetGame">Reset</button>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
