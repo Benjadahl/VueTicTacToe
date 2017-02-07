@@ -6,7 +6,7 @@ var app = new Vue({
     finished: false,
     board: [
       [
-        "", " ", " "
+        " ", " ", " "
       ],
       [
         " ", " ", " "
